@@ -17,18 +17,20 @@ a {
 	text-transform: uppercase;
 	font-weight: bold;
 	margin: 20px 0;
+	color: chartreuse;
+	background-color: darkblue;
+}
 
-
-content form {
+.content form {
 	padding: 10px;
 	width: 300px;
 	margin: 0 auto;
 }
 
-.content form input {
+.content form-input {
 	width: 100%;
 	// border: 2px solid #107394;
 	color: #107394;
 	background: transparent;
-	magrin-bottom: 15px;
+	margin-bottom: 15px;
 }
