@@ -3,19 +3,21 @@
 	// Do not commit console.log statements
 	// Use ajax to reach the api endpoint
 	// Whether or not you use jQuery, you still have to fix the jQuery errors. Removing jQuery is not fixing the problem.
-
+	$(".timeout").hide(0);
 	$mouseover = $('.mouse-over');
 	$click     = $('.click');
 	$submit       = $('.submit');
-	$newbutton = $('.newbutton');
+	$newbutton = $('#newbutton');
 	$this = $(this);
 	var data = $.getJSON("http://www.mattbowytz.com/simple_api.json",{data: "quizData"}, function( json ) {
-  				console.log( json);
+  				console.log(json);
 	});
+//	var keys = JSON.parse(data.responseText);
+//	var stuff = keys.data;
 
 	$mouseover.mouseover('mouse-over', function() {
 		$(this).html('Scrooge McDuck!');
-		$(this).height($(this).height() + 50);
+		$(this).height($(this).height());
 	});
 
 	$click.click('click', function() {
@@ -27,10 +29,10 @@
 	$submit.submit('submit', function(e) {
 		e.preventDefault();
 		if ($(this).find('input[type="text"]').val() !== '') {
-			$(this).find('input').foreach(function() {
+			$(this).find('input').each(function() {
 				$(this).fadeOut('slow');
 			});
-			$(this).appendWith("<h2>Congratulations! You've entered some text!</h2>");
+			$(this).append("<h2>Congratulations! You've entered some text!</h2>");
 		}
 	});
 	
@@ -41,9 +43,9 @@
 			}		 
 	});
 
-	$(".document").on('ready', function() {
+	$(".timeout").fadeIn('ready', function() {
 		setTimeout(function(){
-			$('#timeout').fadeIn('slow');
+			$('.timeout').fadeIn('slow');
 		}, 1000);
 	});
 
